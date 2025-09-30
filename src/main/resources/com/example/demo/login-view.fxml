@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.PasswordField?>
+<VBox alignment="CENTER" spacing="30.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.demo.controller.LoginController">
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <!-- ===== HEADER SECTION ===== -->
+    <VBox alignment="CENTER" spacing="5">
+        <Label fx:id="welcomeText" text="Welcome to ReadRacer" styleClass="heading"/>
+        <Label fx:id="loginText" text="Please log in!" styleClass="heading"/>
+    </VBox>
+
+    <!-- ===== FORM SECTION ===== -->
+    <VBox alignment="CENTER_LEFT" spacing="10" styleClass="vbox-background">
+        <Label text="Username or Email:" styleClass="requests"/>
+        <TextField fx:id="usernameField" promptText="Enter your username or email address"/>
+
+        <Label text="Password:" styleClass="requests"/>
+        <PasswordField fx:id="passwordField" promptText="Enter your password"/>
+
+        <Label fx:id="errorLabel" style="-fx-text-fill: red" layoutX="40" layoutY="180" />
+
+    </VBox>
+
+    <!-- ===== BUTTONS SECTION ===== -->
+    <VBox alignment="CENTER" spacing="10">
+        <Button fx:id="loginButton" text="Log In" onAction="#onLoginButtonClick" />
+        <Button fx:id="cancelButton" text="Cancel" onAction="#onCancelButtonClick" />
+    </VBox>
+
+</VBox>

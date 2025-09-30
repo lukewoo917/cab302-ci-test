@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.demo.controller.InstructionController"
+      spacing="30"
+      >
+
+    <!-- Heading -->
+    <Label text="Instructions" />
+
+    <!-- Scrollable text area -->
+    <TextArea fx:id="instructionText"
+              wrapText="true"
+              prefHeight="250.0"
+              prefWidth="500.0"
+              editable="false"
+              text="ADGBUKAJH ABUFJIKKJDBAJ ABDIHJAKDJ ABSDINJAKDH AOSDUASD ASDKHASD"/>
+
+
+    <!-- Back button -->
+    <Button text="Back" fx:id="backButton" onAction="#onBackButtonClick" />
+
+</VBox>

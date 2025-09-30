@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox alignment="CENTER" spacing="30.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.demo.controller.WelcomeScreenController">
+
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+
+    <!-- ===== HEADER SECTION ===== -->
+    <Label fx:id="welcomeLabel" text="Welcome To ReadRacer"/>
+
+    <!-- Buttons to go to login/signup screen  -->
+    <VBox alignment="CENTER" spacing="10">
+        <Button fx:id="loginBtn" text="Log In" onAction="#onLoginBtnClick"/>
+        <Button fx:id="signupBtn" text="Sign Up" onAction="#onSignupBtnClick"/>
+    </VBox>
+
+</VBox>

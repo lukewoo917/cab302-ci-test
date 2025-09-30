@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            fx:controller="com.example.demo.controller.ProfileController"
+
+>
+
+    <VBox
+            spacing="30"
+            alignment="CENTER"
+            maxWidth="700"
+
+    >
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <!-- Header-->
+        <VBox alignment="CENTER_LEFT" >
+            <Label text="Profile"
+                   styleClass="heading"
+            />
+        </VBox>
+
+        <!-- User info grid -->
+        <GridPane hgap="12" vgap="12" maxWidth="Infinity">
+            <!-- Make columns: [label] [content grows] [button fixed] -->
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="120"/>
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="570"/>
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" minWidth="230"/>
+            </columnConstraints>
+
+            <!-- Username row -->
+            <Label text="Username:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+            <!-- Use a read-only TextField so it can resize and be selectable -->
+            <TextField fx:id="usernameField" text="username" editable="false"
+                       GridPane.rowIndex="0" GridPane.columnIndex="1"
+                       maxWidth="Infinity" />
+            <Button text="Change Username" fx:id="changeUsernameButton" onAction="#onChangeUsernameClick"
+                    GridPane.rowIndex="0" GridPane.columnIndex="2" styleClass="smallButton"/>
+
+            <!-- Email row -->
+            <Label text="Email:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="emailField" text="email" editable="false"
+                       GridPane.rowIndex="1" GridPane.columnIndex="1"
+                       maxWidth="Infinity" />
+            <Button text="Change Email" fx:id="changeEmailButton" onAction="#onChangeEmailClick"
+                    GridPane.rowIndex="1" GridPane.columnIndex="2" styleClass="smallButton"/>
+
+            <!-- Password Hash row -->
+            <Label text="Password Hash:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+            <!-- Long text: wrap in a small, read-only TextArea -->
+            <TextArea fx:id="passwordHashArea" text="password hash"
+                      editable="false" wrapText="true"
+                      prefRowCount="2" maxHeight="120"
+                      GridPane.rowIndex="2" GridPane.columnIndex="1"
+            />
+
+            <!-- Salt row -->
+            <Label text="Salt:" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+            <TextArea fx:id="saltArea" text="Salt"
+                      editable="false" wrapText="true"
+                      prefRowCount="2" maxHeight="120"
+                      GridPane.rowIndex="3" GridPane.columnIndex="1"
+            />
+
+            <!-- ID row -->
+            <Label text="ID:" GridPane.rowIndex="4" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+            <TextArea fx:id="IDArea" text="ID"
+                      editable="false" wrapText="true"
+                      prefRowCount="2" maxHeight="120"
+                      GridPane.rowIndex="4" GridPane.columnIndex="1"
+            />
+        </GridPane>
+
+        <!-- Back button -->
+        <Button text="Back" fx:id="backButton" onAction="#onBackButtonClick" style="-fx-padding: 6 24;"/>
+        <Button text="Delete Account" fx:id="deleteAccountButton" onAction="#onDeleteButtonClick" style="-fx-padding: 6 24;"/>
+
+    </VBox>
+</ScrollPane>
