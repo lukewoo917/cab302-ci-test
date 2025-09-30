@@ -18,6 +18,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
+
 class TimeTest {
 
     private static boolean fxStarted = false;
@@ -32,6 +34,7 @@ class TimeTest {
             } catch (IllegalStateException e) {
                 // JavaFX already running
             }
+            Platform.setImplicitExit(false);
             fxStarted = true;
         }
     }

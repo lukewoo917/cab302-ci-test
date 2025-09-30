@@ -70,6 +70,16 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <!-- Headless-friendly defaults -->
+                        <java.awt.headless>true</java.awt.headless>
+                        <prism.order>sw</prism.order>
+                        <!-- If you use TestFX, these help, otherwise harmless -->
+                        <testfx.headless>true</testfx.headless>
+                        <testfx.robot>glass</testfx.robot>
+                    </systemPropertyVariables>
+                </configuration>
             </plugin>
 
 

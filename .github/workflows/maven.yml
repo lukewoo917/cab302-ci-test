@@ -29,6 +29,21 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+
+
     - name: Run tests in headless mode
       run: mvn test -Djava.awt.headless=true
+
+
+    - name: Install headless display deps
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb libgtk-3-0 libasound2 libgl1
+
+    - name: Run tests (headless X)
+      env:
+        DISPLAY: :99
+      run: |
+        Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+        MAVEN_OPTS="-Dprism.order=sw -Djava.awt.headless=true" mvn -B -e -Dheadless=true test
 

@@ -37,6 +37,7 @@ class CountdownTimerTest {
             } catch (IllegalStateException e) {
                 // JavaFX already running
             }
+            Platform.setImplicitExit(false);
             fxStarted = true;
         }
     }
@@ -306,6 +307,7 @@ class CountdownTimerRateTest {
             } catch (IllegalStateException e) {
                 // JavaFX already running
             }
+            Platform.setImplicitExit(false);
             fxStarted = true;
         }
     }
