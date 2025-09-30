@@ -28,10 +28,16 @@ jobs:
         distribution: 'corretto'
         cache: maven
 
-    - name: Install headless display deps
+    - name: Install headless display deps (Ubuntu 24.04)
       run: |
         sudo apt-get update
-        sudo apt-get install -y xvfb libgtk-3-0 libasound2 libgl1    
+        sudo apt-get install -y \
+          xvfb \
+          libgtk-3-0 \
+          libasound2t64 \
+          libgl1 \
+          libxrender1 \
+          libxtst6
         
         
     # Build first (skip tests), so dependencies & compile happen without DISPLAY
